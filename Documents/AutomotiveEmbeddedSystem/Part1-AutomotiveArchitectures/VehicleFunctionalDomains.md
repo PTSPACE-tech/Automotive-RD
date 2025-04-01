@@ -36,3 +36,52 @@ Các đặc điểm chính của các hệ thống nhúng của miền hệ th�
 - Từ quan điểm thực hiện: Các chức năng được chỉ định được thực hiện dưới dạng một số nhiệm vụ với các quy tắc kích hoạt khác nhau theo quy tắc lấy mẫu, với các hạn chế nghiêm ngặt về thời gian được áp dụng đối với việc lập lịch tác vụ, làm chủ giao tiếp an toàn với các hệ thống khác và với các cảm biến hoặc bộ truyền động cục bộ.
 
 ### 1.2.2 Miền khung gầm
+
+Miền khung gầm bao gồm các hệ thống có mục đích kiểm soát sự tương tác của xe với đường (bánh xe,...). Các bộ điều khiển tính đến các yêu cầu do người lái đưa ra nhằm đảm bảo sự thoải mái của người lái và hành khách. Miền này bao gồm các hệ thống như ABS, ESP, kiểm soát ổn định tự động (ASC) và dẫn động bốn bánh (4WD). Miền khung gầm có tầm quan trọng hàng đầu đối với sự an toàn của hành khách và của chính chiếc xe.
+
+Các đặc điểm của miền khung gầm tương tự như các đặc điểm được trình bày cho miền hệ thống truyền lực: các định luật điều khiển đa biến, thời gian lấy mẫu khác nhau, và các ràng buộc về thời gian nghiêm ngặt khoảng 10ms.
+
+Đối với miền hệ thống truyền lực, các hệ thống điều khiển các thành phần khung gầm được phân phối hoàn toàn trên một bộ vi điều khiển được nối mạng và chúng giao tiếp với các hệ thống khác. Ví dụ hệ thống ESP điều chỉnh quỹ đạo của xe bằng cách điều khiển hệ thống phanh. Vai trò của nó là tự động điều chỉnh quỹ đạo của xe ngay khi có tình trạng thiếu lái hoặc quá lái. Để làm được điều này, nó phải so sánh yêu cầu lái của người lái xe với phản ứng của xe. Điều này được thực hiện thông qua một số cảm biến được phân phối trong xe sau mỗi chu kỳ lấy mẫu. Ngay sau khi cần áp dụng hiệu chỉnh, nó sẽ phanh các bánh trước hoặc bánh sau riêng lẻ hoặc ra lệnh giảm công suất động cơ cho hệ thống hệ thống truyền động. Hệ thống này hợp tác trực tuyến với nhiều hệ thống khác như ABS, điều khiển giảm chấn điện tử (EDC) v.v., để đảm bảo an toàn cho xe.
+
+### 1.2.3 Miền thân xe
+
+Miền thân xe chứa các chức năng được nhúng trong một chiếc xe không liên quan đến việc kiểm soát động lực học của nó. Ngày nay, cần gạt nước, đèn, cửa ra vào, cửa sổ, ghế ngồi và gương được điều khiển ngày càng nhiều bởi các hệ thống phần mềm. Các chức năng của miền thân thường liên quan đến nhiều giao tiếp với nhau và do đó có một kiến trúc phân tán phức tạp.
+
+Trong lĩnh vực này xuất hiện khái niệm về hệ thống con hoặc cụm con dựa trên các mạng cấp cảm biến-thiết bị truyền động chi phí thấp, ví dụ, LIN, kết nối các mô-đun được xây dựng như các hệ thống cơ điện tử tích hợp. Mặt khác, miền cơ thể cũng chứa một hệ thống con trung tâm, được gọi là điện tử cơ thể trung tâm, có chức năng chính là đảm bảo truyền tin nhắn giữa các hệ thống hoặc miền khác nhau.
+
+### 1.2.4 Đa phương tiện, Viễn thông và HMI
+
+Viễn thông trong phương tiện bao gồm các hệ thống hỗ trợ trao đổi thông tin giữa các phương tiện hoặc giữa phương tiện và cơ sở hạ tầng đường bộ. Chúng đã được sử dụng để thu phí đường và trong tương lai sẽ tối ưu hóa giao thông, báo hiệu va chạm, cung cấp chẩn đoán từ xa, cũng như hỗ trợ điều hướng, giải trí, duyệt web, và liên lạc.
+
+Hệ thống HMI (Human-Machine Interface) giúp người lái và hành khách tương tác với xe, bao gồm hiển thị thông tin về trạng thái phương tiện (tốc độ, mức dầu, cửa, đèn...), tình trạng thiết bị đa phương tiện và tiếp nhận lệnh điều khiển. Nhưng có một vấn đề của HMI là đảm bảo chất lượng, hiệu suất, sự thoải mái và quan trọng nhất là an toàn, tránh làm người lái mất tập trung.
+
+Giao tiếp giữa xe và môi trường (V2V, V2I) sẽ ngày càng quan trọng, mang lại nhiều dịch vụ có giá trị cao. Công nghệ tương lai sẽ bao gồm nhận diện giọng nói, công tắc điều khiển theo tầm nhìn, bàn phím ảo và các hệ thống giám sát phương tiện để giảm tải công việc cho người lái.
+
+### 1.2.5 Active/Passive Safety
+
+Nói về sự an toàn, nhu cầu của khách hàng về sự an toàn khi lái xe ngày càng tăng vì thế thách thức ở đây trong ngành công nghiệp automotive đó là làm thế nào để thiết kế các hệ thống nhúng mà nó đạt được độ an toàn nhất và ít tốn chi phí nhất. 
+
+Trong automotive thì sự an toàn của hệ thống nhúng nhắm vào hai mục tiêu: "active safety" và "passive safety", cảnh báo trước khi va chạm và sau đó hành động sau khi va chạm. Dây an toàn và túi khí là ví dụ về hệ thống giúp giảm ảnh hưởng của tai nạn, và do đó chúng góp phần vào passive safety. Túi khí được điều khiển bằng một thuật toán phức tạp trên một ECU và xử lý thông tin từ các hệ thống khác. Nó được cảnh báo bởi các tín hiệu đến từ các cảm biến khác nhau như cảm biến tốc độ xe, thuật toán này điều chỉnh thời điểm phù hợp để triển khai túi khí. Thiết bị đã hoạt động với một giây kể từ thời điểm va chạm được phát hiện bởi cảm biến để kích hoạt túi khí.
+
+### 1.2.6 Chẩn đoán
+
+Hệ thống điện tử trên ô tô ngày càng phức tạp, với nhiều vi điều khiển tương tác chặt chẽ, làm cho chẩn đoán lỗi trở thành một chức năng quan trọng trong suốt vòng đời xe. Hệ thống chẩn đoán tích hợp (OBD - Onboard Diagnostics) giúp thu thập thông tin và hỗ trợ kiểm tra tình trạng xe, có lợi cho cả chủ xe lẫn kỹ thuật viên sửa chữa.
+
+Ban đầu, OBD chỉ đơn giản bật đèn cảnh báo khi có lỗi, nhưng các hệ thống hiện đại sử dụng giao tiếp tiêu chuẩn hóa để mã hóa và báo cáo lỗi thông qua mã lỗi chẩn đoán (DTC). Mục tiêu chính của tiêu chuẩn hóa này là kiểm soát khí thải trong suốt vòng đời xe.
+
+## 1.3 Các thành phần, mô hình và quy trình được tiêu chuẩn hóa
+
+Thiết kế hệ thống nhúng trên xe dựa trên quy trình phát triển hợp tác, đòi hỏi đảm bảo khả năng tương thích giữa các thành phần do nhiều đối tác phát triển và tăng tính linh hoạt bằng cách dễ dàng chuyển đổi giữa các nền tảng. Vì thế nên việc tiêu chuẩn hóa dịch vụ giúp chia sẻ tài nguyên phần cứng giữa các tiến trình ứng dụng, đặc biệt là trong mạng, giao thức và hệ điều hành.
+
+### 1.3.1 Các giao thức mạng trong xe
+
+Năm 1993, Ủy ban Tiêu chuẩn Truyền thông Dữ liệu và Mạng Xe của SAE đã phân loại ba loại giao thức truyền thông dựa trên tốc độ mạng và chức năng: Class A, Class B và Class C.
+
+- Class A có tốc độ dưới 10 kbps, dành cho mạng cảm biến và cơ cấu chấp hành, với các giao thức tiêu biểu như LIN bus và TTP/A bus.
+- Class B hỗ trợ tốc độ trung bình (10–500 kbps), phù hợp cho các hệ thống điện tử thân xe và truyền thông nội bộ, với CAN-B là giao thức phổ biến.
+- Class C dành cho các hệ thống an toàn quan trọng trong truyền động và khung gầm, với tốc độ dưới 1 Mbps. Các giao thức như CAN-C (high-speed CAN), TTP/C và FlexRay thuộc nhóm này, yêu cầu độ tin cậy cao và khả năng chịu lỗi tốt.
+
+Các mạng Class C sẽ ngày càng quan trọng trong các ứng dụng X-by-wire, như điều khiển lái và phanh bằng điện tử.
+
+### 1.3.2 Hệ điều hành
+
